@@ -1,4 +1,4 @@
-**Inserting the value n: O(log n).
-**Extracting the root node: O(1) amortized time complexity for the extraction itself,
+-Inserting the value n: O(log n).
+-Extracting the root node: O(1) amortized time complexity for the extraction itself,
 but the rebuilding step may take O(log n) time in the worst case.
-**Searching for a node in a binary heap of size n: O(n).
+-Searching for a node in a binary heap of size n: O(n).

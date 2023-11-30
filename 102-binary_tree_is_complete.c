@@ -9,12 +9,13 @@
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
+    queue_t *front = NULL;
+    int flag = 0; 
+
     if (tree == NULL)
         return (0);
 
     /* Use level-order traversal to check completeness */
-    queue_t *front = NULL;
-    int flag = 0;  /* Indicates if a non-full node is encountered */
 
     enqueue(&front, (binary_tree_t *)tree);
 

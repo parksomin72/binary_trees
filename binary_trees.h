@@ -2,7 +2,6 @@
 #define BINARY_TREES_H
 #include <stdlib.h>
 #include <stddef.h>
-#include "queues.h"
 
 /* Basic Binary Tree Node Structure */
 struct binary_tree_s
@@ -25,6 +24,7 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
 /* Function Prototypes */
+#include "queues.h"
 
 /* Task 0 */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -86,6 +86,8 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 /* Task 101 */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+/* Task 102 */
+int binary_tree_is_complete(const binary_tree_t *tree);
 
 /* Function to Print Binary Tree (for visualization) */
 void binary_tree_print(const binary_tree_t *tree);

@@ -1,41 +1,50 @@
 #include "queues.h"
+#include "binary_trees.h"
 #include <stdio.h>
-#include <stdlib.h>
 
-void enqueue(queue_t **rear, binary_tree_t *tree)
+
+void enqueue(queue_t **front, binary_tree_t *node)
 {
     queue_t *new_node = malloc(sizeof(queue_t));
-    if (!new_node)
+    if (new_node == NULL)
     {
-        perror("Failed to enqueue");
+        fprintf(stderr, "Failed to enqueue: Memory allocation failed\n");
         exit(EXIT_FAILURE);
     }
 
-    new_node->tree = tree;
+    new_node->tree = node;
     new_node->next = NULL;
 
-    if (*rear == NULL)
+    if (*front == NULL)
     {
-        *rear = new_node;
+        *front = new_node;
     }
     else
     {
-        (*rear)->next = new_node;
-        *rear = new_node;
+        queue_t *temp = *front;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = new_node;
     }
 }
 
 binary_tree_t *dequeue(queue_t **front)
 {
-    binary_tree_t *tree = (*front)->tree;
-    queue_t *temp = *front;
+    binary_tree_t *dequeued;
+    queue_t *temp;
+
     if (*front == NULL)
     {
         return NULL;
     }
 
-    *front = (*front)->next;
-    free(temp);
 
-    return tree;
+    dequeued = (*front)->tree;
+    temp = *front;
+    *front = (*front)->next;
+
+    free(temp);
+    return dequeued;
 }

@@ -1,17 +1,11 @@
 #ifndef QUEUES_H
 #define QUEUES_H
-
+#include "binary_trees.h"
 #include <stdlib.h>
 
-/**
- * struct queue_s - Structure for a queue node
- * @node: Pointer to the binary tree node
- * @next: Pointer to the next element in the queue
- */
-typedef struct queue_s
-{
-    struct binary_tree_s *node;
-    struct queue_s *next;
+typedef struct queue_node {
+    binary_tree_t *tree;
+    struct queue_node *next;
 } queue_t;
 
 /**

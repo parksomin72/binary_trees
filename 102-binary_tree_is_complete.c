@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include "queues.h"
 
 /**
  * binary_tree_is_complete - Checks if a binary tree is complete

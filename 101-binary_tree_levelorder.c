@@ -9,13 +9,14 @@
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (tree == NULL || func == NULL)
-        return;
 
     queue_t *queue = NULL;
     const binary_tree_t *current;
 
     enqueue(&queue, (binary_tree_t *)tree);
+
+    if (tree == NULL || func == NULL)
+        return;
 
     while (queue != NULL)
     {

@@ -1,8 +1,10 @@
 #include "binary_trees.h"
 #include "queues.h"
 #include "queues.c"
+
+
 /**
- * binary_tree_levelorder _Goes through a binary tree using level-order
+ * binary_tree_levelorder - Performs a level-order traversal on a binary tree
  *
  * @tree: Pointer to the root node of the tree to traverse
  * @func: Pointer to a function to call for each node

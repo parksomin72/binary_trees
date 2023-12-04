@@ -2,7 +2,6 @@
 #include "queues.h"
 #include "queues.c"
 
-#include "binary_trees.h"
 
 /**
  * binary_tree_size - Measures the size of a binary tree.
@@ -12,10 +11,10 @@
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return 0;
+if (tree == NULL)
+return (0);
 
-    return 1 + binary_tree_size(tree->left) + binary_tree_size(tree->right);
+return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
 }
 
 /**
@@ -26,13 +25,13 @@ size_t binary_tree_size(const binary_tree_t *tree)
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-    size_t index = 0;
-    size_t size = binary_tree_size(tree);
+size_t index = 0;
+size_t size = binary_tree_size(tree);
 
-    if (tree == NULL)
-        return 0;
+if (tree == NULL)
+return (0);
 
-    return is_complete(tree, index, size);
+return (is_complete(tree, index, size));
 }
 
 /**
@@ -45,12 +44,12 @@ int binary_tree_is_complete(const binary_tree_t *tree)
  */
 int is_complete(const binary_tree_t *tree, size_t index, size_t size)
 {
-    if (tree == NULL)
-        return 1;
+if (tree == NULL)
+return (1);
 
-    if (index >= size)
-        return 0;
+if (index >= size)
+return (0);
 
-    return (is_complete(tree->left, 2 * index + 1, size) &&
-            is_complete(tree->right, 2 * index + 2, size));
+return ((is_complete(tree->left, 2 * index + 1, size) &&
+is_complete(tree->right, 2 * index + 2, size)));
 }
